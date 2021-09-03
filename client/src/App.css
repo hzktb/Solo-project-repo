@@ -1,0 +1,222 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  h1.PO {
+    display: none;
+  }
+  .poBuyer {
+    top: 12vh !important;
+  }
+  .poProductInput {
+    top: 43vh !important;
+  }
+  .dropdown-menu-macos {
+    left: 0 !important;
+  }
+  .poInfo {
+    top: 12vh !important;
+  }
+  .poShip {
+    top: 37vh !important;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .poProductInput {
+    top: 60vh !important;
+  }
+  .poShip {
+    top: 47vh !important;
+  }
+  .poProducts {
+    top: 90vh !important;
+    left: 35vw !important;
+  }
+  .tax-percent {
+    top: 35vh !important;
+  }
+  .poSubmit {
+    top: 76vh !important;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .dropdown-menu-macos {
+    left: 1vw !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+li {
+  list-style: none;
+}
+
+.form-control {
+  border-radius: 1rem !important;
+}
+.break-line {
+  position: absolute;
+  top: 13vh;
+  left: 68vw;
+  height: 60vh;
+  border: 1px solid rgb(222, 226, 230);
+  border-left: none;
+}
+.dropdown-fadeIn {
+  animation: fadeIn 0.4s !important;
+}
+
+.dropdown-menu-macos {
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+  z-index: 2000;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: 0.25rem;
+}
+
+.d-flex {
+  justify-content: space-between;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.menu-bars:hover {
+  cursor: pointer;
+}
+
+.subContainer {
+  position: relative;
+}
+
+.poBuyer,
+.poInfo,
+.poShip,
+.poProductInput {
+  position: absolute;
+  width: 13vw;
+}
+
+input.form-control {
+  margin: 10px 0 !important;
+}
+
+.poBuyer {
+  top: 23vh;
+  left: 19vw;
+}
+
+.poShip {
+  top: 40vh;
+  left: 34vw;
+}
+
+.poInfo {
+  top: 23vh;
+  left: 34vw;
+}
+
+.poProductInput {
+  top: 53vh;
+  left: 19vw;
+}
+
+.poProducts {
+  position: absolute;
+  top: 78vh;
+  left: 30vw;
+}
+
+.poFooter {
+  position: absolute;
+  top: 20vh;
+  left: 70vw;
+  width: 10vw;
+}
+
+.poNotes {
+  position: absolute;
+  top: 25vh;
+  left: 50vw;
+}
+
+.poNotes textarea {
+  width: 15vw;
+  height: 35vh;
+  resize: none;
+}
+
+.poTable {
+  width: 45vw;
+  margin-bottom: 100px;
+}
+
+.tax-percent {
+  position: absolute;
+  top: 32.5vh;
+  left: 78vw;
+  z-index: 10000;
+}
+
+.poSubmit {
+  position: absolute;
+  top: 68vh;
+  left: 73vw;
+}
+
+.tag,
+.tagActive {
+  position: absolute;
+  top: 360px !important;
+}
+
+.tag {
+  left: -200px;
+  animation: slideOut 0.7s;
+}
+
+.tagActive {
+  left: 0px;
+  z-index: 1000;
+  animation: slideIn 0.4s;
+}
