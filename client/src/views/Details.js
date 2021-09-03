@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 function Details(props) {
   const { id, setSelected } = props;
@@ -18,6 +18,22 @@ function Details(props) {
         setSelected("details");
       });
   }, []);
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    let confirmDelete = window.confirm("Are you sure you want to delete?");
+    if (confirmDelete) {
+      axios
+        .delete("http://localhost:8000/api/delete/" + id, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log(res.data);
+          navigate("/main");
+        })
+        .catch((err) => console.log(err.response));
+    }
+  };
   return (
     <div
       className="dropdown-menu-active dropdown-menu-macos shadow-lg p-4"
@@ -73,6 +89,9 @@ function Details(props) {
           >
             Update
           </Link>
+          <button onClick={handleDelete} className="btn btn-danger">
+            Delete
+          </button>
         </>
       )}
     </div>

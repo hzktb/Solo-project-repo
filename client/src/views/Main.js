@@ -29,7 +29,7 @@ const Main = (props) => {
               <Link to={"/invoices/details/" + invoice._id}>
                 {invoice.customerName}
               </Link>
-              ,{invoice.date.slice(0, 10)}
+              , {invoice.date.slice(0, 10)}, {invoice.number}
             </li>
           ))}
       </ul>
