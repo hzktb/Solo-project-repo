@@ -109,7 +109,7 @@ function PurchaseOrder(props) {
         setSelected("home");
         navigate("/main");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response));
   };
 
   return (

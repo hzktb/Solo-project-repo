@@ -104,24 +104,28 @@ function Update(props) {
     e.preventDefault();
     const total = handleCalculateTotal(items);
     axios
-      .put("http://localhost:8000/api/update/" + id, {
-        number: poNumber,
-        date: date,
-        customerName: companyName,
-        customerAddress: companyAddress,
-        shippingName: shippingName,
-        shippingAddress: shippingAddress,
-        shippingPhone: shippingPhone,
-        shippingFee: shipping,
-        price: total,
-        contact: companyPhone,
-        tel: companyPhone,
-        fax: fax,
-        discount: others,
-        note: notes,
-        products: items,
-        taxRate: taxRate,
-      })
+      .put(
+        "http://localhost:8000/api/update/" + id,
+        {
+          number: poNumber,
+          date: date,
+          customerName: companyName,
+          customerAddress: companyAddress,
+          shippingName: shippingName,
+          shippingAddress: shippingAddress,
+          shippingPhone: shippingPhone,
+          shippingFee: shipping,
+          price: total,
+          contact: companyPhone,
+          tel: companyPhone,
+          fax: fax,
+          discount: others,
+          note: notes,
+          products: items,
+          taxRate: taxRate,
+        },
+        { withCredentials: true }
+      )
       .then((res) => navigate("/invoices/details/" + id))
       .catch((err) => console.log(err));
   };
